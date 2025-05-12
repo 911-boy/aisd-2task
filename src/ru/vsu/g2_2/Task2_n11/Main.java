@@ -1,0 +1,26 @@
+package ru.vsu.g2_2.Task2_n11;
+
+import java.util.Random;
+
+public class Main {
+    private static final Random rnd = new Random();
+    public static MyLinkedList<Integer> fillIncrease(int n){
+        MyLinkedList<Integer> res = new MyLinkedList<>();
+        for (int i = 0; i < n; i++){
+            res.addLast(rnd.nextInt(100) + 1);
+        }
+        return res;
+    }
+    public static void main(String[] args) throws MyLinkedListException {
+//        MyLinkedList<Integer> a = fillIncrease(14);
+//        System.out.println(a);
+
+        FrameMain frame = new FrameMain();
+        frame.setSize(500, 500);
+        frame.setVisible(true);
+
+
+
+
+    }
+}
