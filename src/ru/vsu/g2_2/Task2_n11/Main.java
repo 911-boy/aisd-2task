@@ -6,8 +6,10 @@ public class Main {
     private static final Random rnd = new Random();
     public static MyLinkedList<Integer> fillIncrease(int n){
         MyLinkedList<Integer> res = new MyLinkedList<>();
+        int prev  = 0;
         for (int i = 0; i < n; i++){
-            res.addLast(rnd.nextInt(100) + 1);
+            prev += rnd.nextInt(100);
+            res.addFirst(prev);
         }
         return res;
     }

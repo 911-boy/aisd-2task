@@ -235,36 +235,33 @@ public class MyLinkedList<T> {
             throw new MyLinkedListException("List is empty");
         }
         
-        if (size == 1) {
-            
+        // если в списке только один элемент, ничего не делаем
+        if (size <= 1) {
             return;
         }
         
         Node current = head;
         
-       
+        // Проходим по списку, объединяя пары элементов
         while (current != null && current.next != null) {
-            
-            if (current.value instanceof Number && current.next.value instanceof Number) {
-                
-                Integer sum = ((Number) current.value).intValue() + ((Number) current.next.value).intValue();
-                current.value = (T) sum;
-                
-                
-                current.next = current.next.next;
-                
-                
-                if (current.next == null) {
-                    tail = current;
-                }
-                
-                
-                size--;
+            current.value = addValues(current.value, current.next.value);
+            current.next = current.next.next;
+            size--;
+            if (current.next == null) {
+                tail = current;
             }
-            
-            
             current = current.next;
         }
+    }
+    
+    @SuppressWarnings("unchecked")
+    private T addValues(T a, T b) {
+        
+        if (a instanceof Integer && b instanceof Integer) {
+            return (T) Integer.valueOf((Integer) a + (Integer) b);
+        }
+        
+        return a;
     }
 
 
