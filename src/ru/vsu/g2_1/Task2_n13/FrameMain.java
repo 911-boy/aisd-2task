@@ -1,17 +1,17 @@
-package ru.vsu.g2_2.Task2_n11;
-
-import ru.vsu.g2_2.Task2_n11.utils.JTableUtils;
-import ru.vsu.g2_2.Task2_n11.utils.SwingUtils;
+package ru.vsu.g2_1.Task2_n13;
 
 import javax.swing.*;
 import javax.swing.table.TableModel;
+
+import ru.vsu.g2_1.Task2_n13.utils.JTableUtils;
+import ru.vsu.g2_1.Task2_n13.utils.SwingUtils;
+
+import static ru.vsu.g2_1.Task2_n13.Main.fillIncrease;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
-
-import static ru.vsu.g2_2.Task2_n11.Main.fillIncrease;
 
 public class FrameMain extends JFrame{
     private JTable listInput;
